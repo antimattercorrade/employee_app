@@ -11,7 +11,7 @@ A React Native app to manage all the employees of a company. It supports both An
 
 ### Screenshots
 
-![alt text](https://github.com/antimattercorrade/employee_app/blob/master/screenshots/EmployeeApp_1.png?raw=true)
+![alt text](https://github.com/antimattercorrade/employee_app/blob/master/screenshots/EmployeeApp_1.png = 250x250)
 ![alt text](https://github.com/antimattercorrade/employee_app/blob/master/screenshots/EmployeeApp_2.png?raw=true)
 ![alt text](https://github.com/antimattercorrade/employee_app/blob/master/screenshots/EmployeeApp_3.png?raw=true)
 ![alt text](https://github.com/antimattercorrade/employee_app/blob/master/screenshots/EmployeeApp_4.png?raw=true)
