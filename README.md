@@ -28,4 +28,4 @@ A React Native app to manage all the employees of a company. It supports both An
 
 ### Features
 
-Check out at: https://gofile.io/d/xdiWzY
+Check out at: https://vimeo.com/420029777
