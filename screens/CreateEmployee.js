@@ -4,6 +4,8 @@ import { TextInput, Button } from 'react-native-paper';
 import * as ImagePicker from 'expo-image-picker';
 import * as Permissions from 'expo-permissions';
 
+let serverUri // Your backend server uri
+
 const CreateEmployee = ({navigation,route}) => {
 
     const getDetails = (type) => {
@@ -32,7 +34,7 @@ const CreateEmployee = ({navigation,route}) => {
     const [enableshift, setenableshift] = useState(false)
 
     const submitData = () => {
-        fetch("http://9ef5f2cd.ngrok.io/send-data", {
+        fetch(`${serverUri}/send-data`, {
             method: "post",
             headers: {
                 'Content-Type': 'application/json'
@@ -57,7 +59,7 @@ const CreateEmployee = ({navigation,route}) => {
     }
 
     const updateDetails = () => {
-        fetch("http://9ef5f2cd.ngrok.io/update", {
+        fetch(`${serverUri}/update`, {
             method: "post",
             headers: {
                 'Content-Type': 'application/json'
@@ -126,13 +128,16 @@ const CreateEmployee = ({navigation,route}) => {
         }
     }
 
+    let cloudinaryDatabaseName // Your Cloudinary Database Name
+    let presetName // Your Cloudinary Preset Name
+
     const handleUpload = (image) => {
         const data = new FormData()
         data.append('file', image)
-        data.append('upload_preset',"employeeApp")
-        data.append('cloud_name','reactnativenew')
+        data.append('upload_preset',`${presetName}`)
+        data.append('cloud_name',`${cloudinaryDatabaseName}`)
 
-        fetch('https://api.cloudinary.com/v1_1/reactnativenew/image/upload', 
+        fetch(`https://api.cloudinary.com/v1_1/${cloudinaryDatabaseName}/image/upload`, 
         {method: "post",
         body: data  
         }).then(res => res.json())

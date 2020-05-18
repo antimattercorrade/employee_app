@@ -3,6 +3,8 @@ import { StyleSheet, Text, View, Image, FlatList, Alert } from 'react-native';
 import {Card, FAB} from 'react-native-paper';
 import { useSelector, useDispatch } from 'react-redux'
 
+let serverUri // Your backend server uri
+
 const Home = ({navigation, route}) => { 
     // const [data, setData] = useState([])
     // const [loading, setLoading] = useState(true)
@@ -14,7 +16,7 @@ const Home = ({navigation, route}) => {
     })
 
     const fetchData = () => {
-        fetch("http://9ef5f2cd.ngrok.io/")
+        fetch(`${serverUri}`)
          .then(res => res.json())
          .then(results => {
             // setData(results)

@@ -4,12 +4,14 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Title, Card, Button } from 'react-native-paper';
 import { MaterialIcons, Entypo } from '@expo/vector-icons';
 
+let serverUri // Your backend server uri
+
 const Profile = (props) => {
 
     const {_id,name,picture,phone,salary,email,position} = props.route.params.item
     // console.log(_id)
     const deleteEmployee = () => {
-        fetch("http://9ef5f2cd.ngrok.io/delete", {
+        fetch(`${serverUri}/delete`, {  // Use ngrok for development
             method: "post",
             headers: {
                 'Content-Type': 'application/json'
